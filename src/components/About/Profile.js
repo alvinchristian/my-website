@@ -3,7 +3,7 @@ import React from "react";
 const Profile = () => {
     return (
         <div>
-            <h1 className="md:text-2xl text-lg font-semibold text-sky-500 md:mb-4 mb-2">
+            <h1 className="md:text-2xl text-lg font-semibold text-cyan-400 dark:text-indigo-700 md:mb-4 mb-2">
                 Profile
             </h1>
             <p>

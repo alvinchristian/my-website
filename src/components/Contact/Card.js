@@ -24,7 +24,7 @@ const Card = () => {
             {contact.map(({ id, icon, title, value, href }) => (
                 <li
                     key={id}
-                    className="flex flex-col w-full py-4 mx-1 md:mb-4 mb-2 justify-center items-center list-none bg-white/20 rounded-xl"
+                    className="flex flex-col w-full py-4 mx-1 md:mb-4 mb-2 justify-center items-center list-none bg-white/20 text-slate-800 dark:text-slate-50 rounded-xl"
                 >
                     {icon}
                     <h1 className="md:text-base font-semibold my-1">{title}</h1>
@@ -33,7 +33,7 @@ const Card = () => {
                         href={href}
                         target="_blank"
                         rel="noreferrer"
-                        className="font-bold cursor-pointer mt-2 text-sky-500 hover:text-sky-800"
+                        className="font-bold cursor-pointer mt-2 text-cyan-500 hover:text-cyan-700 dark:text-indigo-500 dark:hover:text-indigo-300"
                     >
                         - Message -
                     </a>

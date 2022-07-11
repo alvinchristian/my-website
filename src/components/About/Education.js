@@ -3,7 +3,7 @@ import React from "react";
 const Education = () => {
     return (
         <div>
-            <h1 className="md:text-2xl text-lg font-semibold text-sky-500 md:mb-4 mb-2">
+            <h1 className="md:text-2xl text-lg font-semibold text-cyan-400 dark:text-indigo-700 md:mb-4 mb-2">
                 Education
             </h1>
             <div className="flex md:flex-row flex-col justify-between">
@@ -18,9 +18,9 @@ const Education = () => {
             <p className="font-semibold">
                 Bachelor of Engineer in Informatics Engineering
             </p>
-            <p className="mt-2">GPA : </p>
+            <p className="md:mt-2 mt-1">GPA : </p>
             <p>3.95 / 4.0</p>
-            <p className="mt-2">Coursework :</p>
+            <p className="md:mt-2 mt-1">Coursework :</p>
             <p>
                 Algorithm and Data Structure, Application Programming Interface
                 (API), Databases, Microservices, Pattern Recognition

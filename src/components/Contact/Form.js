@@ -5,7 +5,7 @@ const Form = () => {
     const form = useRef();
 
     const inputClass =
-        "p-4 bg-white/20 border-2 border-cyan-50 focus:border-sky-800 focus:outline-none rounded-xl";
+        "p-4 bg-white/20 border-4 border-cyan-100 dark:border-indigo-800 focus:border-cyan-300 dark:focus:border-indigo-600 focus:outline-none rounded-xl";
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -55,7 +55,7 @@ const Form = () => {
                 rows={6}
                 placeholder="Your Message"
             ></textarea>
-            <button className="bg-gradient-to-t from-blue-50 to-blue-100 hover:bg-gradient-to-t hover:from-sky-50 hover:to-sky-100 mt-2 h-10 md:self-start self-center md:w-40 w-32 rounded-lg md:text-sm">
+            <button className="bg-white hover:bg-black dark:bg-black dark:hover:bg-white hover:text-white dark:text-white dark:hover:text-black mt-2 h-10 md:self-start self-center md:w-40 w-32 rounded-lg md:text-sm">
                 Send Message
             </button>
         </form>

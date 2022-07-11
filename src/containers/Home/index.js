@@ -30,21 +30,21 @@ const Home = () => {
     return (
         <div
             name="Home"
-            className="flex md:flex-row flex-col md:justify-evenly justify-center items-center w-full h-screen bg-gradient-to-b from-d1 to-d4
+            className="flex md:flex-row flex-col md:justify-evenly justify-center items-center w-full h-screen bg-gradient-to-b from-d1 to-d4 dark:from-n1 dark:to-n4
             font-medium text-center"
         >
-            <div className="my-10">
+            <div className="my-8 dark:text-slate-50 text-slate-800">
                 <h3 className="text-xs md:text-base font-normal text-start">
                     Hello, I'm,
                 </h3>
-                <h1 className="text-3xl md:text-5xl font-bold tracking-wide mb-2 text-white">
+                <h1 className="text-3xl md:text-5xl font-bold tracking-wide mb-2 text-black dark:text-white">
                     Alvin Christian
                 </h1>
-                <h2 className="text-sm md:text-lg border-b-2 border-double border-black">
+                <h2 className="text-sm md:text-lg border-b-2 border-double border-black dark:border-white">
                     Front End Developer
                 </h2>
                 <h2 className="text-sm md:text-lg">Mobile Developer</h2>
-                <div className="flex justify-evenly mt-3 mb-8 text-slate-500">
+                <div className="flex justify-evenly mt-3 md:mb-8 mb-4 text-slate-500">
                     {socialMedia.map(({ id, icon, href }) => (
                         <a
                             key={id}
@@ -59,7 +59,7 @@ const Home = () => {
                 <a
                     href="/Alvin Christian - CV.pdf"
                     download={true}
-                    className="bg-gradient-to-t from-blue-50 to-blue-100 hover:bg-gradient-to-t hover:from-sky-50 hover:to-sky-100 md:px-6 md:py-4 px-4 py-2 md:rounded-xl rounded-lg md:text-sm text-xs font-semibold"
+                    className="bg-white dark:bg-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black md:px-6 md:py-4 px-4 py-2 md:rounded-xl rounded-lg md:text-sm text-xs font-semibold"
                 >
                     Download CV
                 </a>
@@ -68,7 +68,7 @@ const Home = () => {
                 <img
                     src={images.MyPhoto}
                     alt="MyPhoto"
-                    className="w-56 md:w-80"
+                    className="w-52 md:w-80"
                 />
             </div>
         </div>

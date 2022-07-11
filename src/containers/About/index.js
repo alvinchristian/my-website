@@ -28,24 +28,26 @@ const About = () => {
     return (
         <div
             name="About"
-            className="w-full h-screen bg-gradient-to-b from-d4 to-d3 flex flex-col justify-center items-center"
+            className="w-full h-screen bg-gradient-to-b from-d4 to-d3 dark:from-n4 dark:to-n3 flex flex-col justify-center items-center"
         >
-            <h1 className="md:text-3xl text-xl font-semibold text-slate-800 md:mb-8 mb-4">
+            <h1 className="md:text-3xl text-xl font-semibold text-black dark:text-white md:mb-8 mb-4">
                 About
             </h1>
-            <div className="w-10/12 h-96 py-10 md:mb-6 mb-4 md:px-10 px-5 flex justify-center items-center rounded-xl bg-white/20 text-slate-800 md:text-base text-xs text-normal leading-relaxed text-center">
+            <div className="w-10/12 h-96 py-10 md:mb-6 mb-4 md:px-10 px-5 flex justify-center items-center rounded-xl bg-white/20 text-slate-800 dark:text-slate-50 md:text-base text-xs text-normal leading-relaxed text-center">
                 {currentIndex === 0 && <Profile />}
                 {currentIndex === 1 && <Education />}
                 {currentIndex === 2 && <Experiences />}
                 {currentIndex === 3 && <Skills />}
             </div>
-            <div className="flex py-1 px-3 md:w-2/6 w-5/6 justify-evenly bg-white/30 border-2 border-cyan-50 rounded-xl">
+            <div className="flex py-2 px-3 md:w-2/6 w-4/6 justify-evenly bg-white/20 border-4 border-cyan-200 dark:border-indigo-700 rounded-xl">
                 {button.map(({ id, icon }) => (
                     <div
                         onClick={() => setCurrentIndex(id)}
                         key={id}
-                        className={`text-slate-800 hover:bg-black hover:text-white ${
-                            currentIndex === id ? "bg-black text-white" : null
+                        className={`text-slate-800 dark:white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black ${
+                            currentIndex === id
+                                ? "bg-black text-white dark:bg-white dark:text-black"
+                                : null
                         } mx-1 p-2 rounded-xl cursor-pointer`}
                     >
                         {icon}

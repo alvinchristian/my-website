@@ -5,10 +5,10 @@ const Contact = () => {
     return (
         <div
             name="Contact"
-            className="flex flex-col px-10 justify-center items-center w-full h-screen bg-gradient-to-b from-d2 to-d1"
+            className="flex flex-col px-10 justify-center items-center w-full h-screen bg-gradient-to-b from-d2 to-d1 dark:from-n2 dark:to-n1"
         >
             <div>
-                <h1 className="md:text-3xl text-xl font-semibold text-slate-800 md:mb-8 mb-4">
+                <h1 className="md:text-3xl text-xl font-semibold text-black dark:text-white md:mb-8 mb-4">
                     Contact
                 </h1>
             </div>

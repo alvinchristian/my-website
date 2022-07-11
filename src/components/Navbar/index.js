@@ -2,26 +2,24 @@ import React, { useState } from "react";
 import { FaBars, FaTimes, FaSun, FaStarAndCrescent } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { images } from "../../assets";
+import nightMode from "./nightMode";
 
 const NavBar = () => {
     const [nav, setNav] = useState(false);
     const [dark, setDark] = useState(false);
+    const [setTheme, colorTheme] = nightMode();
 
     const containers = [
         {
-            id: 1,
             title: "Home",
         },
         {
-            id: 2,
             title: "About",
         },
         {
-            id: 3,
             title: "Projects",
         },
         {
-            id: 4,
             title: "Contact",
         },
     ];
@@ -38,10 +36,10 @@ const NavBar = () => {
             </Link>
             <div className="flex flex-1 items-center justify-end">
                 <div className="hidden md:flex flex-1 justify-center">
-                    {containers.map(({ id, title }) => (
+                    {containers.map(({ title }) => (
                         <Link
-                            key={id}
-                            className="p-3 mx-4 text-sm font-semibold cursor-pointer text-slate-800 hover:bg-white rounded-lg"
+                            key={title}
+                            className="p-3 mx-4 text-sm font-semibold cursor-pointer text-slate-800 hover:bg-white dark:text-white dark:hover:bg-black rounded-lg"
                             to={title}
                             smooth
                             duration={500}
@@ -52,23 +50,43 @@ const NavBar = () => {
                 </div>
                 <div
                     onClick={() => setNav(!nav)}
-                    className="cursor-pointer z-10 text-slate-800 md:hidden"
+                    className="cursor-pointer z-10 md:hidden"
                 >
-                    {nav ? <FaTimes size={15} /> : <FaBars size={15} />}
-                </div>
-                <div className="ml-5 cursor-pointer">
-                    {dark ? (
-                        <FaStarAndCrescent onClick={() => setDark(!dark)} />
+                    {nav ? (
+                        <FaTimes
+                            size={15}
+                            className="text-white dark:text-black"
+                        />
                     ) : (
-                        <FaSun onClick={() => setDark(!dark)} />
+                        <FaBars
+                            size={15}
+                            className="text-black dark:text-white"
+                        />
+                    )}
+                </div>
+                <div className="ml-5 cursor-pointer text-black dark:text-white">
+                    {dark ? (
+                        <FaStarAndCrescent
+                            onClick={() => {
+                                setTheme(colorTheme);
+                                setDark(false);
+                            }}
+                        />
+                    ) : (
+                        <FaSun
+                            onClick={() => {
+                                setTheme(colorTheme);
+                                setDark(true);
+                            }}
+                        />
                     )}
                 </div>
                 {nav && (
-                    <div className="flex flex-col rounded-lg justify-center items-center top-0 mt-3 mr-6 py-2 w-52 absolute bg-white">
-                        {containers.map(({ id, title }) => (
+                    <div className="flex flex-col rounded-lg justify-center items-center top-0 mt-3 mr-6 py-2 w-52 absolute bg-black dark:bg-white">
+                        {containers.map(({ title }) => (
                             <Link
-                                key={id}
-                                className="p-3 my-1 text-sm font-semibold cursor-pointer text-slate-800  hover:bg-d3 rounded-lg"
+                                key={title}
+                                className="p-3 my-1 text-sm font-semibold cursor-pointer text-white dark:text-black hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white rounded-lg"
                                 to={title}
                                 onClick={() => setNav(!nav)}
                                 smooth
