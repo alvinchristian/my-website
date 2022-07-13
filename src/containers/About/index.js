@@ -5,7 +5,7 @@ import { Education, Experiences, Profile, Skills } from "../../components";
 const About = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const iconClass = "md:w-6 md:h-6 w-4 h-4";
+    const iconClass = "w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7";
     const button = [
         {
             id: 0,
@@ -28,31 +28,30 @@ const About = () => {
     return (
         <div
             name="About"
-            className="w-full h-screen bg-gradient-to-b from-d4 to-d3 dark:from-n4 dark:to-n3 flex flex-col justify-center items-center"
+            className="w-full h-screen flex justify-center items-center"
         >
-            <h1 className="md:text-3xl text-xl font-semibold text-black dark:text-white md:mb-8 mb-4">
-                About
-            </h1>
-            <div className="w-10/12 h-96 py-10 md:mb-6 mb-4 md:px-10 px-5 flex justify-center items-center rounded-xl bg-white/20 text-slate-800 dark:text-slate-50 md:text-base text-xs text-normal leading-relaxed text-center">
-                {currentIndex === 0 && <Profile />}
-                {currentIndex === 1 && <Education />}
-                {currentIndex === 2 && <Experiences />}
-                {currentIndex === 3 && <Skills />}
-            </div>
-            <div className="flex py-2 px-3 md:w-2/6 w-4/6 justify-evenly bg-white/20 border-4 border-cyan-200 dark:border-indigo-700 rounded-xl">
-                {button.map(({ id, icon }) => (
-                    <div
-                        onClick={() => setCurrentIndex(id)}
-                        key={id}
-                        className={`text-slate-800 dark:white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black ${
-                            currentIndex === id
-                                ? "bg-black text-white dark:bg-white dark:text-black"
-                                : null
-                        } mx-1 p-2 rounded-xl cursor-pointer`}
-                    >
-                        {icon}
-                    </div>
-                ))}
+            <div className="flex flex-col landscape:flex-row w-11/12 h-full justify-center items-center pt-10">
+                <div className="w-11/12 h-96 landscape:h-3/4 px-6 md:px-8 lg:px-12 py-4 flex justify-center items-center rounded-xl bg-white/20 text-slate-800 dark:text-slate-50 text-xs md:text-sm lg:text-base xl:text-lg text-normal leading-normal md:leading-relaxed text-center">
+                    {currentIndex === 0 && <Profile />}
+                    {currentIndex === 1 && <Education />}
+                    {currentIndex === 2 && <Experiences />}
+                    {currentIndex === 3 && <Skills />}
+                </div>
+                <div className="flex flex-row landscape:flex-col justify-evenly items-center w-11/12 landscape:w-1/12 h-14 landscape:h-3/4 mt-4 landscape:mt-0 landscape:ml-2 bg-white/20 border-2 border-sky-300 dark:border-indigo-900 rounded-xl">
+                    {button.map(({ id, icon }) => (
+                        <div
+                            onClick={() => setCurrentIndex(id)}
+                            key={id}
+                            className={`text-slate-800 dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black ${
+                                currentIndex === id
+                                    ? "bg-black text-white dark:bg-white dark:text-black animate-bounce"
+                                    : null
+                            } mx-1 p-2 rounded-lg cursor-pointer`}
+                        >
+                            {icon}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

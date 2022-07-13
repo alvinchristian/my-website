@@ -15,7 +15,7 @@ import {
 } from "react-icons/si";
 
 const Skills = () => {
-    const iconClass = "md:w-7 w-5 md:h-7 h-5";
+    const iconClass = "w-6 h-6 md:mr-1 lg:mb-1 lg:w-7 lg:h-7 xl:w-8 xl:h-8";
 
     const skills = [
         {
@@ -104,35 +104,33 @@ const Skills = () => {
 
     return (
         <div className="w-full">
-            <h1 className="text-center md:text-2xl text-lg font-semibold text-cyan-400 dark:text-indigo-700 md:mb-4 mb-2">
+            <h1 className="text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-sky-400 dark:text-indigo-900 mb-2 md:mb-4">
                 Skills
             </h1>
-            <div className="w-full flex flex-wrap justify-around items-center">
+            <div className="w-full flex flex-wrap justify-evenly items-center">
                 {skills.map(({ id, icon, title, hover }) => (
                     <div
                         key={id}
-                        className={`md:min-w-fit md:w-2/12 w-3/12 mb-4 flex flex-col justify-center items-center text-slate-800 dark:text-slate-50 ${hover}`}
+                        className={`w-3/12 mb-4 landscape:mb-2 md:landscape:mb-4 lg:landscape:mb-6 flex justify-center items-center text-slate-800 dark:text-slate-50 ${hover}`}
                     >
                         {icon}
-                        <p className="mt-2 font-semibold md:flex hidden">
+                        <h1 className="text-xs lg:text-sm xl:text-base font-semibold md:flex hidden">
                             {title}
-                        </p>
+                        </h1>
                     </div>
                 ))}
             </div>
-            <p className="font-semibold my-2 text-cyan-400 dark:text-indigo-700">
-                Familiar :
+            <p className="font-semibold mb-2 md:mb-4 text-sky-400 dark:text-indigo-900">
+                Familiar
             </p>
-            <div className="w-full flex flex-row justify-around items-center">
+            <div className="w-full flex justify-evenly items-center">
                 {familiar.map(({ id, icon, title, hover }) => (
                     <div
                         key={id}
-                        className={`w-3/12 mb-4 flex flex-col justify-center items-center text-slate-800 dark:text-slate-50 ${hover}`}
+                        className={`w-3/12 flex justify-center items-center text-slate-800 dark:text-slate-50 ${hover}`}
                     >
                         {icon}
-                        <p className="mt-2 font-semibold md:flex hidden">
-                            {title}
-                        </p>
+                        <p className="font-semibold md:flex hidden">{title}</p>
                     </div>
                 ))}
             </div>

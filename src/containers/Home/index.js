@@ -3,7 +3,7 @@ import { FaInstagram, FaLinkedin, FaGithub, FaGitlab } from "react-icons/fa";
 import { images } from "../../assets";
 
 const Home = () => {
-    const iconSize = "md:w-7 w-5 md:h-7 h-5";
+    const iconSize = "w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8";
     const socialMedia = [
         {
             id: 1,
@@ -30,21 +30,23 @@ const Home = () => {
     return (
         <div
             name="Home"
-            className="flex md:flex-row flex-col md:justify-evenly justify-center items-center w-full h-screen bg-gradient-to-b from-d1 to-d4 dark:from-n1 dark:to-n4
-            font-medium text-center"
+            className="flex landscape:flex-row flex-col landscape:justify-evenly justify-center items-center w-full h-screen
+         pt-10"
         >
-            <div className="my-8 dark:text-slate-50 text-slate-800">
-                <h3 className="text-xs md:text-base font-normal text-start">
+            <div className="w-10/12 landscape:w-6/12 mb-8 landscape:mb-0 px-6 md:px-12 lg:px-20 dark:text-slate-50 text-slate-800 text-center">
+                <h3 className="text-xs md:text-sm lg:text-base font-medium text-start">
                     Hello, I'm,
                 </h3>
-                <h1 className="text-3xl md:text-5xl font-bold tracking-wide mb-2 text-black dark:text-white">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide mb-2 text-black dark:text-white">
                     Alvin Christian
                 </h1>
-                <h2 className="text-sm md:text-lg border-b-2 border-double border-black dark:border-white">
+                <h2 className="text-sm md:text-base lg:text-lg font-semibold border-b-2 border-double border-black dark:border-white">
                     Front End Developer
                 </h2>
-                <h2 className="text-sm md:text-lg">Mobile Developer</h2>
-                <div className="flex justify-evenly mt-3 md:mb-8 mb-4 text-slate-500">
+                <h2 className="text-sm md:text-base lg:text-lg font-semibold">
+                    Mobile Developer
+                </h2>
+                <div className="flex justify-evenly mt-4 lg:mt-6 mb-4 md:mb-8 lg:mb-10 text-slate-500">
                     {socialMedia.map(({ id, icon, href }) => (
                         <a
                             key={id}
@@ -59,18 +61,16 @@ const Home = () => {
                 <a
                     href="/Alvin Christian - CV.pdf"
                     download={true}
-                    className="bg-white dark:bg-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black md:px-6 md:py-4 px-4 py-2 md:rounded-xl rounded-lg md:text-sm text-xs font-semibold"
+                    className="bg-white dark:bg-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-4 py-2 md:px-5 md:py-3 rounded-lg text-xs md:text-sm font-semibold"
                 >
                     Download CV
                 </a>
             </div>
-            <div>
-                <img
-                    src={images.MyPhoto}
-                    alt="MyPhoto"
-                    className="w-52 md:w-80"
-                />
-            </div>
+            <img
+                src={images.MyPhoto}
+                alt="MyPhoto"
+                className="landscape:w-3/12 w-3/6"
+            />
         </div>
     );
 };

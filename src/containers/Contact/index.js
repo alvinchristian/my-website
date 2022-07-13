@@ -5,14 +5,9 @@ const Contact = () => {
     return (
         <div
             name="Contact"
-            className="flex flex-col px-10 justify-center items-center w-full h-screen bg-gradient-to-b from-d2 to-d1 dark:from-n2 dark:to-n1"
+            className="flex flex-col pt-10 justify-center items-center w-full h-screen"
         >
-            <div>
-                <h1 className="md:text-3xl text-xl font-semibold text-black dark:text-white md:mb-8 mb-4">
-                    Contact
-                </h1>
-            </div>
-            <div className="flex md:flex-row flex-col w-full justify-center items-center text-xs font-medium">
+            <div className="w-10/12 landscape:w-11/12 landscape:px-4 h-full flex landscape:flex-row flex-col justify-center items-center text-xs font-medium">
                 <Card />
                 <Form />
             </div>

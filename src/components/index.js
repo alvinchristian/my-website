@@ -1,4 +1,5 @@
 export { default as Navbar } from "./Navbar";
+export { default as NotFound } from "./NotFound";
 export { default as Profile } from "./About/Profile";
 export { default as Education } from "./About/Education";
 export { default as Experiences } from "./About/Experiences";

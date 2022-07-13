@@ -3,7 +3,7 @@ import { images } from "../../assets";
 
 const Projects = () => {
     const descUlStyle =
-        "text-xs font-medium text-justify leading-relaxed list md:flex flex-col hidden pb-2 px-2";
+        "text-xs xl:text-sm font-medium text-justify leading-normal list flex-col hidden lg:flex pb-2 px-2";
     const Projects = [
         {
             id: 1,
@@ -65,28 +65,23 @@ const Projects = () => {
     return (
         <div
             name="Projects"
-            className="w-full h-screen flex flex-col justify-center items-center bg-gradient-to-b from-d3 to-d2 dark:from-n3 dark:to-n2"
+            className="w-full h-screen flex justify-center items-center pt-10"
         >
-            <div>
-                <h1 className="md:text-3xl text-xl font-semibold text-black dark:text-white md:mb-8 mb-4">
-                    Projects
-                </h1>
-            </div>
-            <div className="flex flex-col md:flex-row w-full justify-between items-center md:px-20 text-slate-800 dark:text-slate-50">
+            <div className="w-10/12 h-full landscape:w-11/12 flex flex-col landscape:flex-row justify-center items-center text-slate-800 dark:text-slate-50">
                 {Projects.map(({ id, name, href, image, desc }) => (
                     <a
                         key={id}
                         href={href}
                         target={"_blank"}
                         rel="noreferrer"
-                        className={`w-fit md:h-96 h-fit flex flex-col justify-center items-center bg-white/20 md:m-2 mb-1 p-2 rounded-xl`}
+                        className={`w-10/12 landscape:w-1/3 max-w-xs landscape:max-w-none landscape:h-2/3 flex flex-col justify-center items-center bg-white/20 mb-4 landscape:mb-0 landscape:mx-2 p-2 md:p-4 rounded-xl`}
                     >
                         <img
                             src={image}
                             alt="Projects"
-                            className="rounded-lg md:w-full w-56 bg-slate-900"
+                            className="rounded-lg w-full bg-slate-900 landscape:transition duration-300 ease-in-out landscape:hover:-translate-y-5"
                         />
-                        <h1 className="text-lg font-bold text-center mt-2 md:flex hidden">
+                        <h1 className="text-xs md:text-sm lg:text-base xl:text-lg font-bold text-center mt-2 flex text-black dark:text-white">
                             {name}
                         </h1>
                         {desc}
